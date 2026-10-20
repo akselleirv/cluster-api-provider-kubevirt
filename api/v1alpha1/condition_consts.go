@@ -42,6 +42,11 @@ const (
 
 	// VMLiveMigratableCondition documents whether the VM is live-migratable or not
 	VMLiveMigratableCondition = "VMLiveMigratable"
+
+	// VMEvacuationRequiresReplacementReason documents a control plane KubevirtMachine whose VM has to
+	// leave its draining infra node but cannot live-migrate. The VM is kept running and the Machine is
+	// marked for remediation, because a restart would bring it back on a new pod IP.
+	VMEvacuationRequiresReplacementReason = "VMEvacuationRequiresReplacement"
 )
 
 const (
